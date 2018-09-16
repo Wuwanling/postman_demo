@@ -1,0 +1,182 @@
+{
+	"id": "17fdd795-4aa7-40e9-a18f-4e7c6763a146",
+	"name": "20180916",
+	"allTests": [],
+	"timestamp": "2018-09-16T03:45:02.354Z",
+	"collection_id": "3fe08033-700f-4159-bf70-adcc162db491",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "3fe08033-700f-4159-bf70-adcc162db491",
+		"name": "20180916",
+		"description": null,
+		"auth": null,
+		"events": null,
+		"variables": null,
+		"order": [
+			"6f42f26c-8719-4569-9afe-ecd460684004",
+			"42ce4149-1f05-4aeb-a0e0-9f36a05f0353"
+		],
+		"folders_order": [],
+		"owner": "0",
+		"permissions": {},
+		"favorite": false,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [
+		{
+			"key": "BASE_URL",
+			"value": "http://118.31.19.120:3000/api/v1",
+			"description": "",
+			"type": "text",
+			"enabled": true
+		}
+	],
+	"results": [
+		{
+			"name": "主题首页",
+			"id": "6f42f26c-8719-4569-9afe-ecd460684004",
+			"url": "http://118.31.19.120:3000/api/v1/topics?page=4&tab=ask&limit=1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "limit=1,返回数据的长度为1",
+				"status": "pass",
+				"success 应该是true ": true
+			},
+			"testPassFailCounts": {
+				"limit=1,返回数据的长度为1": {
+					"pass": 1,
+					"fail": 0
+				},
+				"success 应该是true ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"48"
+			],
+			"allTests": [
+				{
+					"limit=1,返回数据的长度为1": true,
+					"success 应该是true ": true
+				}
+			],
+			"time": "48",
+			"totalRequestTime": "48",
+			"iterationResults": {}
+		},
+		{
+			"name": "主题详情",
+			"id": "42ce4149-1f05-4aeb-a0e0-9f36a05f0353",
+			"url": "http://118.31.19.120:3000/api/v1/topic/5b9db81bc7011d6643118187?mdrender=true",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "Status code is 200",
+				"status": "pass",
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"40"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			],
+			"time": "40",
+			"totalRequestTime": "40",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 4,
+	"totalFail": 0,
+	"totalTime": 88,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "主题首页",
+			"id": "6f42f26c-8719-4569-9afe-ecd460684004",
+			"url": "http://118.31.19.120:3000/api/v1/topics?page=4&tab=ask&limit=1",
+			"time": "2018-09-16T03:45:02.354Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"limit=1,返回数据的长度为1": {
+					"pass": 1,
+					"fail": 0
+				},
+				"success 应该是true ": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "主题详情",
+			"id": "42ce4149-1f05-4aeb-a0e0-9f36a05f0353",
+			"url": "http://118.31.19.120:3000/api/v1/topic/5b9db81bc7011d6643118187?mdrender=true",
+			"time": "2018-09-16T03:45:02.354Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
