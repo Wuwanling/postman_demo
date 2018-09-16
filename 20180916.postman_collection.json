@@ -6,6 +6,75 @@
 	},
 	"item": [
 		{
+			"name": "pp",
+			"item": [
+				{
+					"name": "发表话题",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dfaccf7f-ad1f-430e-9839-0629b80bf768",
+								"type": "text/javascript",
+								"exec": [
+									"// pm.test(\"错误的\b提示信息的断言\", function () {",
+									"//     var jsonData = pm.response.json();",
+									"//     var msg=jsonData['error_msg']",
+									"//     console.log('msg==',msg)",
+									"//     // 获取\b运行环境变量message",
+									"//     var expect_val = pm.variables.get(\"message\");",
+									"//     //添加断言 判断success 字段值是否\b为true",
+									"//     pm.expect(msg).to.eql(expect_val);",
+									"    ",
+									"// });",
+									"var expect_val = pm.variables.get(\"message\");",
+									"pm.test(\"错误的\b提示信息的断言\"+expect_val, function () {",
+									"    var jsonData = pm.response.json();",
+									"    console.log(\"json data == \",jsonData)",
+									"    // 拿到error_msg 值",
+									"    var val = jsonData['error_msg']",
+									"    // 获取\b运行环境变量check_val",
+									"  ",
+									"    console.log(expect_val);",
+									"    // \b判断长度是否为1",
+									"    pm.expect(val).to.eql(expect_val);",
+									"});",
+									"",
+									"//var alldata=pm.response.json();",
+									"//var topic_id=alldata['topic_id']",
+									"",
+									"//pm.globals.set(\"topicid\", topic_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"accesstoken\":\"{{token}}\",\n\t\"title\":\"{{title}}\",\n\t\"tab\":\"{{tab}}\",\n\t\"content\":\"{{content}}\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/topics",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"topics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "主题首页",
 			"event": [
 				{
@@ -134,70 +203,6 @@
 							"key": "mdrender",
 							"value": "true"
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "发表话题",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "54c754d2-1fe4-4918-8346-5d2b01264097",
-						"type": "text/javascript",
-						"exec": [
-							"// pm.test(\"错误的\b提示信息的断言\", function () {",
-							"//     var jsonData = pm.response.json();",
-							"//     var msg=jsonData['error_msg']",
-							"//     console.log('msg==',msg)",
-							"//     // 获取\b运行环境变量message",
-							"//     var expect_val = pm.variables.get(\"message\");",
-							"//     //添加断言 判断success 字段值是否\b为true",
-							"//     pm.expect(msg).to.eql(expect_val);",
-							"    ",
-							"// });",
-							"",
-							"pm.test(\"错误的\b提示信息的断言\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    console.log(\"json data == \",jsonData)",
-							"    // 拿到error_msg 值",
-							"    var val = jsonData['error_msg']",
-							"    // 获取\b运行环境变量check_val",
-							"    var expect_val = pm.variables.get(\"message\");",
-							"    console.log(expect_val);",
-							"    // \b判断长度是否为1",
-							"    pm.expect(val).to.eql(expect_val);",
-							"});",
-							"",
-							"//var alldata=pm.response.json();",
-							"//var topic_id=alldata['topic_id']",
-							"",
-							"//pm.globals.set(\"topicid\", topic_id);"
-						]
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"accesstoken\":\"{{token}}\",\n\t\"title\":\"{{title}}\",\n\t\"tab\":\"{{tab}}\",\n\t\"content\":\"{{content}}\"\n}"
-				},
-				"url": {
-					"raw": "{{BASE_URL}}/topics",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"topics"
 					]
 				}
 			},
